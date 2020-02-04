@@ -1,0 +1,19 @@
+<template>
+    <template if:true={options}>
+        <div>
+            <h1>Search Available SKUs</h1>
+            <lightning-input type="text" label="Enter SKU Name to filter selection" onchange={handleSearch}></lightning-input>
+        </div>
+        <lightning-dual-listbox name           = "SKUs"
+                                label          = "Select SKUs to Assign"
+                                source-label   = "Available SKUs"
+                                selected-label = "Assigned SKUs"
+                                options        = {options}
+                                value          = {value}
+                                onchange       = {handleChange} > 
+        </lightning-dual-listbox>  
+    </template> 
+    <div class ="slds-box">
+        <p> Selected Values are: {value} </p>>
+    </div>
+</template>
